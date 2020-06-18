@@ -1,0 +1,28 @@
+spring:
+   application:
+      name: springcloud-gateway-zuul
+server:
+   port: 8040
+#eureka客户端连接配置
+eureka:
+   client:
+      service-url:
+         #注册中心地址
+         defaultZone: http://user:password123@localhost:8761/eureka/
+   instance:
+      #将ip注册到eureka上
+      prefer-ip-address: true
+#zuul配置
+#1.zuul默认从eureka读取全部注册微服务services并进行代理访问,默认示例：http://localhost:8040/provider-user/simple/3
+zuul:
+   #zuul代理路由配置
+   routes:
+      #主键标志用来保持唯一，可以改成abc
+      user:
+         #zuul代理服务路径
+         # 一、/* 只能访问一层路径  比如   user-path/simple  
+         # 二、/** 可以访问子路径 比如 user-path/simple/1
+         path: /user-path/**
+         #eureka注册服务id
+         service-id: provider-user
+      

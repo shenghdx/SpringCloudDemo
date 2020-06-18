@@ -1,0 +1,28 @@
+spring:
+   application:
+      name: springcloud-gateway-zuul
+server:
+   port: 8040
+#eureka客户端连接配置
+eureka:
+   client:
+      service-url:
+         #注册中心地址
+         defaultZone: http://user:password123@localhost:8761/eureka/
+   instance:
+      #将ip注册到eureka上
+      prefer-ip-address: true
+zuul:
+   host:
+       socket-timeout-millis: 60000
+       connect-timeout-millis: 60000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000

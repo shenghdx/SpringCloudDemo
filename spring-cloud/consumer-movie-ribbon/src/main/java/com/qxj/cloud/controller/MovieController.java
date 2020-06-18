@@ -21,4 +21,11 @@ public class MovieController {
 		User user = this.restTemplate.getForObject("http://provider-user:7900/simple/" + id, User.class);
 		return user;
 	}
+	
+	@RequestMapping(value="/sidecar",method = RequestMethod.GET,produces="application/json;charset=UTF-8")
+	public String Sidecar() {
+		//微服务的虚拟id http://provider-user
+		String str = this.restTemplate.getForObject("http://springcloud-gateway-zuul/sidecar/", String.class);
+		return str;
+	}
 }

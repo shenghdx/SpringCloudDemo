@@ -19,6 +19,10 @@
 	<!-- 子模块 -->
 	<modules>
 		<module>springcloud-eureka-service</module>
+		<module>springcloud-gateway-zuul</module>
+		<module>springcloud-gateway-zuul-reg-exp</module>
+		<module>springcloud-gateway-zuul-fallback</module>
+		<module>springcloud-gateway-zuul-filter</module>
 		<module>springcloud-eureka-service-ha</module>
 		<module>springcloud-hystrix-dashboard</module>
 		<module>consumer-movie</module>
@@ -35,6 +39,8 @@
 		<module>springcloud-hystrix-turbine3</module>
 		<module>consumer-movie-ribbon-with-hystrix3</module>
 		<module>provider-user</module>
+		<module>file-upload</module>
+		<module>sidecar</module>
 	</modules>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
